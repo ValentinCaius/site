@@ -12,6 +12,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+.responsive {
+  width:75px;
+  height: 75px;
+}
+
 audio, canvas, progress, video {
   vertical-align: baseline;
   display: inline-block;
@@ -2213,17 +2218,35 @@ a {
 }
 
 .nav-content {
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
-  grid-template-rows: auto;
-  grid-template-columns: 4fr 2fr;
-  grid-auto-columns: 1fr;
-  align-items: start;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.nav-menu-blocks-wrapper {
+  display: flex;
+}
+
+.nav-menu-block {
+  display: flex;
+  gap: 1rem; /* Adjust gap as needed for spacing */
+}
+
+
 .nav-logo {
-  margin-right: auto; /* Pushes the menu items to the right */
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  color: var(--white);
+  letter-spacing: -.96px;
+  text-transform: uppercase;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px;
+  font-family: IBM Plex Mono, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 128%;
+  display: flex;
 }
 
 .nav-logo-letters-wrapper {
@@ -2243,15 +2266,6 @@ a {
   bottom: -100%;
 }
 
-.nav-menu-blocks-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.nav-menu-block {
-  display: flex;
-  gap: 20px;
-}
 
 .nav-menu-item {
   color: var(--white);
@@ -2368,21 +2382,8 @@ a {
   line-height: 128%;
 }
 
-.h2.h2-about {
+.h2.h2-about, .h2.h2-contact {
   max-width: 480px;
-}
-
-.h2.h2-contact {
-  display: flex; /* Use flexbox to align items */
-  align-items: center;
-}
-
-.profile-picture {
-  width: 200px; /* Adjust as needed */
-  height: 200px; /* Adjust as needed */
-  border-radius: 50%; /* Make it circular */
-  object-fit: cover; /* Ensure the image covers the area */
-  margin-left: 10px; /* Space between the heading and the image */
 }
 
 .h2-small {
@@ -2656,25 +2657,6 @@ a {
   grid-row-gap: 88px;
   flex-flow: column;
   display: flex;
-}
-
-#contact {
-  font-size: 50px !important; /* Adjust size as needed */
-}
-
-#contact .h2-contact, #contact, #contact .large-text, #contact .form-heading, #contact .success-message-text-wrapper {
-  font-size: 50px !important; /* Adjust each as needed */
-}
-
-#contact .regular-s {
-  font-size: 50px !important; /* Smaller text if desired */
-}
-
-.header-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 100px; /* Adjust the spacing between text and image */
 }
 
 .home-hero-offer-text-wrapper {
@@ -3489,9 +3471,8 @@ a {
   }
 
   .contact-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    grid-column-gap: 64px;
+    grid-row-gap: 64px;
   }
 
   .home-hero-offer-text-wrapper {
@@ -3600,9 +3581,7 @@ a {
   }
 
   .nav-menu-blocks-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: none;
   }
 
   .h1.h1-small.changelog-h1 {
@@ -3694,4 +3673,9 @@ a {
 
 #w-node-_760b5a25-439a-68ee-b8da-912586c32282-86c32282 {
   justify-self: start;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
 }
